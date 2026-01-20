@@ -1,0 +1,72 @@
+:root {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  color: #111;
+  background: #fafafa;
+}
+
+body {
+  margin: 0;
+}
+
+header, main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #ddd;
+  background: white;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+nav a {
+  margin-left: 12px;
+  text-decoration: none;
+  color: #0b57d0;
+}
+
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn + .btn {
+  margin-left: 10px;
+}
+
+#map {
+  overflow: hidden;
+}
+
+.leaflet-pane svg,
+.leaflet-pane path,
+.leaflet-interactive {
+  pointer-events: auto;
+}
+
+.leaflet-interactive {
+  cursor: pointer;
+}
