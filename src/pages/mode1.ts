@@ -24,6 +24,7 @@ const highlights = new HighlightManager(
 
 export function renderMode1(root: HTMLElement) {
   root.innerHTML = `
+  <div class="fullpage">
     <header>
       <h1>Know Italy — Regionen bestimmen</h1>
       <nav>
@@ -40,9 +41,11 @@ export function renderMode1(root: HTMLElement) {
         <button class="btn" id="next" style="display:none;">Nächste Frage</button>
       </div>
 
-      <div id="map" class="card" style="height: 70vh; margin-top: 12px;"></div>
+      <div id="map" class="card map-card"></div>
     </main>
-  `;
+  </div>
+`;
+
 
   const panel = bindQuizPanel(root);
 
@@ -128,7 +131,8 @@ async function loadRegions(panel: QuizPanel) {
       },
     });
 
-    mapView.fitToGeoLayer([10, 10]);
+    mapView.fitToGeoLayerTightAfterLayout([0, 0], 1.25, 0.25);
+    //mapView.invalidateSize();
     startNewQuestion(panel, quiz, deNamesCache);
   } catch (err: any) {
     panel.setStatus(`Fehler beim Laden: ${err?.message ?? String(err)}`);
